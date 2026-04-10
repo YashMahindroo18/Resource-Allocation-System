@@ -70,3 +70,10 @@ public void viewTasks() {
         System.out.println(t);
     }
 }
+public void searchTask(String keyword) {
+    for (Task t : tasks.values()) {
+        if (t.getTitle().toLowerCase().contains(keyword.toLowerCase())) {
+            System.out.println(t);
+        }
+    }
+}
