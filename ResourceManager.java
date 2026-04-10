@@ -59,3 +59,14 @@ public void completeTask(int taskId) {
 
     System.out.println("Task marked as completed");
 }
+public void viewEmployees() {
+    for (Employee e : employees.values()) {
+        System.out.println(e);
+    }
+}
+
+public void viewTasks() {
+    for (Task t : tasks.values()) {
+        System.out.println(t);
+    }
+}
