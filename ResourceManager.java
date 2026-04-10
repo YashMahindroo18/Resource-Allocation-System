@@ -89,3 +89,10 @@ public void showStats() {
     System.out.println("Completed Tasks: " + completed);
     System.out.println("Pending Tasks: " + (totalTasks - completed));
 }
+public void tasksByEmployee(String empName) {
+    for (Task t : tasks.values()) {
+        if (empName.equals(t.getAssignedTo())) {
+            System.out.println(t);
+        }
+    }
+}
