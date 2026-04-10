@@ -77,3 +77,15 @@ public void searchTask(String keyword) {
         }
     }
 }
+public void showStats() {
+    int totalTasks = tasks.size();
+    int completed = 0;
+
+    for (Task t : tasks.values()) {
+        if (t.isCompleted()) completed++;
+    }
+
+    System.out.println("Total Tasks: " + totalTasks);
+    System.out.println("Completed Tasks: " + completed);
+    System.out.println("Pending Tasks: " + (totalTasks - completed));
+}
