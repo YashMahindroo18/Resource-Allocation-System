@@ -35,3 +35,27 @@ public void assignTask(int taskId, int empId) {
 
     System.out.println("Task assigned successfully");
 }
+public void completeTask(int taskId) {
+    Task task = tasks.get(taskId);
+
+    if (task == null) {
+        System.out.println("Task not found");
+        return;
+    }
+
+    if (task.isCompleted()) {
+        System.out.println("Task already completed");
+        return;
+    }
+
+    task.markCompleted();
+
+    for (Employee e : employees.values()) {
+        if (e.getName().equals(task.getAssignedTo())) {
+            e.completeTask();
+            break;
+        }
+    }
+
+    System.out.println("Task marked as completed");
+}
